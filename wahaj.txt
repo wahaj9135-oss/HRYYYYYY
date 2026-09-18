@@ -1,0 +1,17 @@
+def add_entry(text):
+    with open("journal.txt", "a") as f:
+        f.write(text + "\n")
+
+def search_entries(keyword):
+    with open("journal.txt", "r") as f:
+        for line in f:
+            if keyword in line:
+                print(line.strip())
+
+# ---- yahan se calls ----
+add_entry("Aaj Python file I/O seekha")
+add_entry("Kal ML preprocessing revise karna hai")
+add_entry("File I/O practice project bana raha hoon")
+
+print("Search results for 'Python':")
+search_entries("Python")
